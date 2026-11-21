@@ -1,0 +1,276 @@
+<!-- PASTE THIS CODE INTO: courses.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14 Career Roadmaps & Video Courses - Our Learning Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Learning Academy 🚀</h1>
+    <h5>14 Future-Ready Career Tracks & Complete English Video Roadmaps</h5>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html" class="active">Courses</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html">Contact</a>
+    <button class="dark-toggle" id="darkToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </nav>
+
+  <section>
+    <h2>Complete Start-to-Finish Learning Roadmaps 🎓</h2>
+    <p class="section-intro">
+      Every course below follows a strict, industry-verified learning sequence from <strong>Step 1 (Foundations)</strong> to <strong>Capstone & Deployment</strong>. Click <strong>"📺 View Exact Roadmap"</strong> to start learning immediately.
+    </p>
+
+    <!-- Category Filter Buttons -->
+    <div class="filter-bar" id="courseFilters">
+      <button class="filter-btn active" data-filter="all">All Tracks (14)</button>
+      <button class="filter-btn" data-filter="ai">Data, BI & AI</button>
+      <button class="filter-btn" data-filter="fullstack">Full Stack & Core CS</button>
+      <button class="filter-btn" data-filter="cloud">Cloud, DevOps & Security</button>
+      <button class="filter-btn" data-filter="mobile">Mobile, Design & Web3</button>
+    </div>
+
+    <div class="courses" id="coursesGrid">
+      <!-- 1. Data Analytics & Business Intelligence -->
+      <div class="course-card" data-category="ai">
+        <div>
+          <span class="course-badge badge-hot">Complete BI Track</span>
+          <h3>1. Data Analytics & Business Intelligence</h3>
+          <p><strong>Roadmap:</strong> Excel → SQL → Python → NumPy & Pandas → Power BI → Tableau → Capstone.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('data-analytics')">📺 View Exact Roadmap (7 Steps)</button>
+          <a href="register.html?course=Data%20Analytics%20%26%20Business%20Intelligence" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 2. Full Stack Web Development -->
+      <div class="course-card" data-category="fullstack">
+        <div>
+          <span class="course-badge">Most Popular</span>
+          <h3>2. Full Stack Web Development</h3>
+          <p><strong>Roadmap:</strong> HTML5 & CSS3 → JavaScript → Git → TypeScript → React → Node.js & Express → PostgreSQL → Docker.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('fullstack-web')">📺 View Exact Roadmap (8 Steps)</button>
+          <a href="register.html?course=Full%20Stack%20Web%20Development" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 3. AI Engineer (Zero to Production) -->
+      <div class="course-card" data-category="ai">
+        <div>
+          <span class="course-badge badge-hot">Top Future Demand</span>
+          <h3>3. AI Engineer (Zero to Production)</h3>
+          <p><strong>Roadmap:</strong> Python → Linear Algebra → NumPy/Pandas → ML → Neural Nets & PyTorch → LLMs → Prompting → RAG → AI Agents → FastAPI/Docker.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('genai-llm')">📺 View Exact Roadmap (11 Steps)</button>
+          <a href="register.html?course=AI%20Engineer%20(Zero%20to%20Production)" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 4. Fullstack with Python -->
+      <div class="course-card" data-category="fullstack">
+        <div>
+          <span class="course-badge">High Demand</span>
+          <h3>4. Fullstack with Python</h3>
+          <p><strong>Roadmap:</strong> Python & OOP → Git → HTML5 & CSS3 → JavaScript → SQL → Django → FastAPI → React → Docker.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('python-fullstack')">📺 View Exact Roadmap (9 Steps)</button>
+          <a href="register.html?course=Fullstack%20with%20Python" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 5. Java Enterprise Fullstack -->
+      <div class="course-card" data-category="fullstack">
+        <div>
+          <span class="course-badge">Enterprise</span>
+          <h3>5. Java Enterprise Fullstack</h3>
+          <p><strong>Roadmap:</strong> Core Java & OOP → Git → MySQL → HTML/CSS → TypeScript → Spring Boot 3 → Angular → Microservices → Docker.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('java-fullstack')">📺 View Exact Roadmap (9 Steps)</button>
+          <a href="register.html?course=Java%20Enterprise%20Fullstack" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 6. Data Science & Machine Learning -->
+      <div class="course-card" data-category="ai">
+        <div>
+          <span class="course-badge">Core AI</span>
+          <h3>6. Data Science & Machine Learning</h3>
+          <p><strong>Roadmap:</strong> Linear Algebra → Statistics → Python → SQL → NumPy & Pandas → Scikit-Learn ML → PyTorch Deep Learning.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('data-science')">📺 View Exact Roadmap (7 Steps)</button>
+          <a href="register.html?course=Data%20Science%20%26%20Machine%20Learning" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 7. Cloud Computing & DevOps -->
+      <div class="course-card" data-category="cloud">
+        <div>
+          <span class="course-badge badge-hot">High Salary</span>
+          <h3>7. Cloud Computing & DevOps</h3>
+          <p><strong>Roadmap:</strong> Networking → Linux & Bash → Git → Python Scripting → Docker → Kubernetes → AWS Cloud → Terraform IaC.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('cloud-devops')">📺 View Exact Roadmap (8 Steps)</button>
+          <a href="register.html?course=Cloud%20Computing%20%26%20DevOps" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 8. Cybersecurity & Ethical Hacking -->
+      <div class="course-card" data-category="cloud">
+        <div>
+          <span class="course-badge">Essential</span>
+          <h3>8. Cybersecurity & Ethical Hacking</h3>
+          <p><strong>Roadmap:</strong> Computer Networking → Linux Security → Python Scripting → Penetration Testing → Web AppSec (OWASP Top 10).</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('cybersecurity')">📺 View Exact Roadmap (5 Steps)</button>
+          <a href="register.html?course=Cybersecurity%20%26%20Ethical%20Hacking" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 9. Data Engineering & Big Data -->
+      <div class="course-card" data-category="ai">
+        <div>
+          <span class="course-badge">AI Infrastructure</span>
+          <h3>9. Data Engineering & Big Data</h3>
+          <p><strong>Roadmap:</strong> SQL Data Warehousing → Linux & Bash → Python ETL → Docker → Apache Spark (PySpark) → Apache Kafka.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('data-engineering')">📺 View Exact Roadmap (6 Steps)</button>
+          <a href="register.html?course=Data%20Engineering%20%26%20Big%20Data" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 10. Cross-Platform Mobile App Dev -->
+      <div class="course-card" data-category="mobile">
+        <div>
+          <span class="course-badge">Mobile First</span>
+          <h3>10. Cross-Platform Mobile App Dev</h3>
+          <p><strong>Roadmap:</strong> JavaScript ES6+ → TypeScript → Git → React Native → Flutter & Dart → Firebase Cloud Backend.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('mobile-dev')">📺 View Exact Roadmap (6 Steps)</button>
+          <a href="register.html?course=Cross-Platform%20Mobile%20App%20Dev" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 11. DSA, Algorithms & System Design -->
+      <div class="course-card" data-category="fullstack">
+        <div>
+          <span class="course-badge badge-hot">FAANG / Interviews</span>
+          <h3>11. DSA, Algorithms & System Design</h3>
+          <p><strong>Roadmap:</strong> CS50 Foundations → Python Coding → Data Structures & Algorithms → Dynamic Programming → System Design.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('dsa-system-design')">📺 View Exact Roadmap (5 Steps)</button>
+          <a href="register.html?course=DSA%2C%20Algorithms%20%26%20System%20Design" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 12. UI/UX Product Design & Figma -->
+      <div class="course-card" data-category="mobile">
+        <div>
+          <span class="course-badge">Creative Tech</span>
+          <h3>12. UI/UX Product Design & Figma</h3>
+          <p><strong>Roadmap:</strong> UI/UX Principles → Figma Mastery → Design Systems & Prototyping → Webflow / Frontend Handoff.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('ui-ux-design')">📺 View Exact Roadmap (4 Steps)</button>
+          <a href="register.html?course=UI%2FUX%20Product%20Design%20%26%20Figma" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 13. Blockchain & Web3 Engineering -->
+      <div class="course-card" data-category="mobile">
+        <div>
+          <span class="course-badge">Decentralized</span>
+          <h3>13. Blockchain & Web3 Engineering</h3>
+          <p><strong>Roadmap:</strong> Blockchain & Cryptography → Solidity Smart Contracts → Foundry & Hardhat → Full-Stack dApps.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('blockchain-web3')">📺 View Exact Roadmap (4 Steps)</button>
+          <a href="register.html?course=Blockchain%20%26%20Web3%20Engineering" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <!-- 14. MLOps & Production AI Deployment -->
+      <div class="course-card" data-category="cloud">
+        <div>
+          <span class="course-badge badge-hot">Next-Gen AI Ops</span>
+          <h3>14. MLOps & Production AI Deployment</h3>
+          <p><strong>Roadmap:</strong> Linux & Bash → Python & FastAPI → Git CI/CD → Docker → MLflow & Model Tracking → Kubernetes & Cloud Serving.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-roadmap" onclick="openCourseModal('mlops-ai')">📺 View Exact Roadmap (6 Steps)</button>
+          <a href="register.html?course=MLOps%20%26%20Production%20AI%20Deployment" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Video Roadmap Modal -->
+  <div id="roadmapModal" class="modal-overlay" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h2 id="modalCourseTitle">Course Roadmap</h2>
+          <p id="modalCourseSubtitle">Step-by-step curated YouTube learning resources</p>
+        </div>
+        <button class="modal-close" onclick="closeCourseModal()" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Embedded Video Player -->
+        <div class="modal-player-section">
+          <div class="video-wrapper modal-video">
+            <iframe
+              id="roadmapVideoFrame"
+              src=""
+              title="Course Roadmap Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="now-playing-bar">
+            <span id="nowPlayingTitle">Select a module to start watching</span>
+            <a id="youtubeExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="yt-external-btn">
+              Open in YouTube ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Step-by-step Roadmap Playlist -->
+        <div class="modal-playlist-section">
+          <h3>🗺️ Verified Learning Sequence</h3>
+          <div id="roadmapStepsList" class="roadmap-steps"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span class="modal-tip">💡 Follow Step 1 → Final Step in exact order for complete mastery.</span>
+        <a id="modalEnrollBtn" href="register.html" class="btn-enroll">Enroll in This Course →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Our Learning Academy | 🚀 All Rights Reserved</p>
+    <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

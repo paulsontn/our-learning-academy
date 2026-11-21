@@ -1,0 +1,57 @@
+<!-- PASTE THIS CODE INTO: contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Our Learning Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Learning Academy 🚀</h1>
+    <h5>We would Love to Hear from You!</h5>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html" class="active">Contact</a>
+    <button class="dark-toggle" id="darkToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </nav>
+
+  <section>
+    <h2>Get in Touch 📩</h2>
+    <p class="section-intro">
+      Have a question about a learning track, want to request a new career roadmap, or spotted an unavailable YouTube video? Let us know below!
+    </p>
+    <div class="contact-form">
+      <form id="contactForm">
+        <input type="text" id="contactName" placeholder="Your Name" required />
+        <input type="email" id="contactEmail" placeholder="Your Email" required />
+        <select id="contactTopic" required>
+          <option value="" disabled selected>Select Inquiry Topic</option>
+          <option value="Request a New Career Roadmap">🗺️ Request a New Career Roadmap</option>
+          <option value="Report Unavailable Video">📺 Report an Unavailable YouTube Video</option>
+          <option value="Course & Career Guidance">🎓 Course & Career Guidance</option>
+          <option value="General Feedback">💬 General Feedback</option>
+        </select>
+        <textarea id="contactMessage" rows="5" placeholder="Describe the roadmap you'd like us to add or share your message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="success-banner" id="contactSuccessMsg">
+        ✅ Message Successfully Sent! Thank you for helping improve Our Learning Academy.
+      </div>
+      <div id="savedContactInquiry" class="saved-card" style="display: none;"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Our Learning Academy | 🚀 All Rights Reserved</p>
+    <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

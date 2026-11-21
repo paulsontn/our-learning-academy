@@ -1,0 +1,167 @@
+<!-- PASTE THIS CODE INTO: register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Our Learning Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Learning Academy 🚀</h1>
+    <h5>Register for Your Future!</h5>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="register.html" class="active">Register</a>
+    <a href="contact.html">Contact</a>
+    <button class="dark-toggle" id="darkToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </nav>
+
+  <div class="form-container">
+    <h1>Student Registration Form 📝</h1>
+    <form id="registrationForm" novalidate>
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required />
+            <div class="error-message" id="error-name">Please enter your name.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td>
+            <input type="number" id="age" name="age" placeholder="Enter Your Age" min="1" max="120" required />
+            <div class="error-message" id="error-age">Please enter a valid age (1-120).</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <div class="radio-group" id="gender-group">
+              <label><input type="radio" name="gender" value="Male" required /> Male</label>
+              <label><input type="radio" name="gender" value="Female" required /> Female</label>
+              <label><input type="radio" name="gender" value="Other" required /> Other</label>
+            </div>
+            <div class="error-message" id="error-gender">Please select your gender.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required />
+            <div class="error-message" id="error-email">Please enter a valid email.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="course">Select Course:</label></td>
+          <td>
+            <select id="course" name="course" required>
+              <option value="" disabled selected>Select from 14 Future-Ready Tracks</option>
+              <option value="Data Analytics & Business Intelligence">1. Data Analytics & Business Intelligence</option>
+              <option value="Full Stack Web Development">2. Full Stack Web Development</option>
+              <option value="AI Engineer (Zero to Production)">3. AI Engineer (Zero to Production)</option>
+              <option value="Fullstack with Python">4. Fullstack with Python</option>
+              <option value="Java Enterprise Fullstack">5. Java Enterprise Fullstack</option>
+              <option value="Data Science & Machine Learning">6. Data Science & Machine Learning</option>
+              <option value="Cloud Computing & DevOps">7. Cloud Computing & DevOps</option>
+              <option value="Cybersecurity & Ethical Hacking">8. Cybersecurity & Ethical Hacking</option>
+              <option value="Data Engineering & Big Data">9. Data Engineering & Big Data</option>
+              <option value="Cross-Platform Mobile App Dev">10. Cross-Platform Mobile App Dev</option>
+              <option value="DSA, Algorithms & System Design">11. DSA, Algorithms & System Design</option>
+              <option value="UI/UX Product Design & Figma">12. UI/UX Product Design & Figma</option>
+              <option value="Blockchain & Web3 Engineering">13. Blockchain & Web3 Engineering</option>
+              <option value="MLOps & Production AI Deployment">14. MLOps & Production AI Deployment</option>
+            </select>
+            <div class="error-message" id="error-course">Please select a course.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="resume">Upload Resume:</label></td>
+          <td>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
+            <small class="file-hint">Accepted formats: PDF, DOC, DOCX (Optional)</small>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center-cell">
+            <label>
+              <input type="checkbox" id="terms" name="terms" required /> I agree to the <a href="#">Terms & Conditions</a>
+            </label>
+            <div class="error-message" id="error-terms">You must agree to the terms to register.</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center-cell">
+            <input type="submit" id="submitBtn" value="Register" />
+            <input type="reset" value="Clear" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <div class="privacy-note">
+      We respect your privacy and will never share your data without permission.
+    </div>
+
+    <div id="successMsg" class="success-banner">✅ Registration Successful! Your course video roadmap is unlocked below.</div>
+
+    <!-- Saved Registration Summary & Direct Roadmap Launcher -->
+    <div id="savedRegistration" class="saved-card" style="display: none;"></div>
+  </div>
+
+  <!-- Interactive Video Roadmap Modal (Accessible right after enrolling!) -->
+  <div id="roadmapModal" class="modal-overlay" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h2 id="modalCourseTitle">Course Roadmap</h2>
+          <p id="modalCourseSubtitle">Step-by-step curated YouTube learning resources</p>
+        </div>
+        <button class="modal-close" onclick="closeCourseModal()" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-player-section">
+          <div class="video-wrapper modal-video">
+            <iframe
+              id="roadmapVideoFrame"
+              src=""
+              title="Course Roadmap Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="now-playing-bar">
+            <span id="nowPlayingTitle">Select a module to start watching</span>
+            <a id="youtubeExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="yt-external-btn">
+              Open in YouTube ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-playlist-section">
+          <h3>🗺️ Verified Learning Sequence</h3>
+          <div id="roadmapStepsList" class="roadmap-steps"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span class="modal-tip">🎉 Enrolled Student Access: Follow Step 1 → Final Step in order.</span>
+        <button class="btn-enroll" onclick="closeCourseModal()">Done Watching</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Our Learning Academy | 🚀 All Rights Reserved</p>
+    <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
