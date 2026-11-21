@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paulsontn.github.io/our-learning-academy/sitemap.xml
